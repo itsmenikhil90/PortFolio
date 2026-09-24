@@ -433,6 +433,8 @@ renderProjects();
    =========================== */
 const leetcodeUsername = 'Nikhil7635';
 const leetcodeEndpoint = 'https://leetcode.com/graphql';
+const leetcodeRefreshInterval = 60 * 1000;
+let leetcodeRequestInFlight = false;
 const leetcodeQuery = `
     query LiveProfile($username: String!, $year: Int) {
         matchedUser(username: $username) {
@@ -456,6 +458,10 @@ function updateLeetCodeAvatar(url) {
     avatar.classList.remove('is-unavailable');
     avatar.src = url;
     avatar.onerror = () => avatar.classList.add('is-unavailable');
+}
+
+function updateLeetCodeSyncStatus(message) {
+    setLeetCodeText('leetcode-sync-status', message);
 }
 
 function updateLeetCodeActivity(calendar) {
@@ -485,10 +491,17 @@ function updateLeetCodeActivity(calendar) {
 }
 
 async function loadLiveLeetCodeProfile() {
+    if (leetcodeRequestInFlight) return;
+    leetcodeRequestInFlight = true;
     try {
-        const response = await fetch(leetcodeEndpoint, {
+        const response = await fetch(`${leetcodeEndpoint}?refresh=${Date.now()}`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            cache: 'no-store',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                'Cache-Control': 'no-cache'
+            },
             body: JSON.stringify({
                 query: leetcodeQuery,
                 variables: { username: leetcodeUsername, year: new Date().getFullYear() }
@@ -526,13 +539,22 @@ async function loadLiveLeetCodeProfile() {
             if (bar) bar.style.width = `${all.count ? (count / all.count) * 100 : 0}%`;
         });
         updateLeetCodeActivity(profile.userCalendar.submissionCalendar);
+        updateLeetCodeSyncStatus(`Live · updated ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`);
     } catch (error) {
         console.error('Live LeetCode profile update failed.', error);
+        updateLeetCodeSyncStatus('Live sync unavailable · retrying soon');
+    } finally {
+        leetcodeRequestInFlight = false;
     }
 }
 
 loadLiveLeetCodeProfile();
-setInterval(loadLiveLeetCodeProfile, 5 * 60 * 1000);
+setInterval(loadLiveLeetCodeProfile, leetcodeRefreshInterval);
+window.addEventListener('focus', loadLiveLeetCodeProfile);
+window.addEventListener('pageshow', loadLiveLeetCodeProfile);
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') loadLiveLeetCodeProfile();
+});
 
 /* ===========================
    TESTIMONIALS SLIDER
