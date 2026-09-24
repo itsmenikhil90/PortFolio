@@ -432,7 +432,7 @@ renderProjects();
    LIVE LEETCODE PROFILE
    =========================== */
 const leetcodeUsername = 'Nikhil7635';
-const leetcodeEndpoint = 'https://leetcode.com/graphql';
+const leetcodeEndpoint = '/.netlify/functions/leetcode';
 const leetcodeRefreshInterval = 60 * 1000;
 let leetcodeRequestInFlight = false;
 const leetcodeQuery = `
@@ -494,18 +494,10 @@ async function loadLiveLeetCodeProfile() {
     if (leetcodeRequestInFlight) return;
     leetcodeRequestInFlight = true;
     try {
-        const response = await fetch(`${leetcodeEndpoint}?refresh=${Date.now()}`, {
-            method: 'POST',
+        const response = await fetch(`${leetcodeEndpoint}?username=${encodeURIComponent(leetcodeUsername)}&year=${new Date().getFullYear()}&refresh=${Date.now()}`, {
+            method: 'GET',
             cache: 'no-store',
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json',
-                'Cache-Control': 'no-cache'
-            },
-            body: JSON.stringify({
-                query: leetcodeQuery,
-                variables: { username: leetcodeUsername, year: new Date().getFullYear() }
-            })
+            headers: { Accept: 'application/json', 'Cache-Control': 'no-cache' }
         });
         if (!response.ok) throw new Error(`LeetCode returned HTTP ${response.status}.`);
 
