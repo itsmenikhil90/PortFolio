@@ -1627,6 +1627,423 @@ body.light-mode .navbar.scrolled {
 }
 
 /* ===========================
+   ENIGMA ACTIVITIES
+   =========================== */
+.enigma-intro {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(198, 167, 106, 0.08), rgba(108, 99, 255, 0.05));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.enigma-badge {
+    display: inline-flex;
+    padding: 0.38rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(198, 167, 106, 0.12);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.enigma-intro h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 1rem 0 0.8rem;
+}
+
+.enigma-intro p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 760px;
+}
+
+.enigma-header-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.enigma-impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+}
+
+.enigma-impact-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(108,99,255,0.03));
+    min-height: 170px;
+}
+
+.enigma-impact-card span {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+}
+
+.enigma-impact-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+.enigma-role-wrap,
+.enigma-gallery-wrap,
+.enigma-timeline {
+    margin-top: 3rem;
+}
+
+.enigma-section-heading {
+    margin-bottom: 1.5rem;
+}
+
+.enigma-section-heading h3 {
+    margin-top: 0.4rem;
+    font-size: 1.8rem;
+}
+
+.enigma-role-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.enigma-role-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.2rem;
+    transition: var(--transition);
+}
+
+.enigma-role-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-glow);
+}
+
+.enigma-role-card i {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: rgba(198, 167, 106, 0.12);
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.enigma-role-card h4 {
+    font-size: 1.02rem;
+    margin-bottom: 0.55rem;
+}
+
+.enigma-role-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.84rem;
+}
+
+.enigma-gallery-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.enigma-gallery-header h3 {
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.enigma-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.enigma-filter-btn {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.enigma-filter-btn.active,
+.enigma-filter-btn:hover {
+    background: var(--gradient-1);
+    border-color: transparent;
+    color: #fff;
+}
+
+.enigma-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.enigma-event-card {
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+}
+
+.enigma-event-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.enigma-event-image-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 270px;
+}
+
+.enigma-event-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.enigma-event-card:hover .enigma-event-image-wrap img {
+    transform: scale(1.03);
+}
+
+.enigma-event-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.6));
+    padding: 1rem;
+}
+
+.enigma-event-tag {
+    align-self: flex-start;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.enigma-view-btn {
+    align-self: flex-start;
+    border: none;
+    background: var(--gradient-1);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.75rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.enigma-event-body {
+    padding: 1.25rem 1.25rem 1.4rem;
+}
+
+.enigma-event-meta,
+.enigma-event-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.enigma-event-body h4 {
+    margin: 0.8rem 0 0.6rem;
+    font-size: 1.2rem;
+}
+
+.enigma-event-body p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.87rem;
+    margin-bottom: 1rem;
+}
+
+.enigma-timeline-list {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+}
+
+.enigma-timeline-list::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+.enigma-timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.enigma-timeline-marker {
+    position: absolute;
+    left: -2.15rem;
+    top: 1.2rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gradient-1);
+    border: 3px solid var(--bg-primary);
+}
+
+.enigma-timeline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.3rem 1.4rem;
+}
+
+.enigma-timeline-date {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+}
+
+.enigma-timeline-card h4 {
+    margin-bottom: 0.4rem;
+}
+
+.enigma-timeline-card p {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+.enigma-mini-btn {
+    margin-top: 0.8rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.enigma-lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(9, 10, 17, 0.82);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+    z-index: 2000;
+}
+
+.enigma-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.enigma-lightbox-content {
+    position: relative;
+    width: min(900px, calc(100vw - 2rem));
+    background: rgba(17, 17, 22, 0.96);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 1rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.enigma-lightbox-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.enigma-lightbox-image-wrap img {
+    width: 100%;
+    max-height: 72vh;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.enigma-lightbox-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.enigma-lightbox-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0.2rem 0.2rem;
+    color: var(--text-secondary);
+}
+
+.enigma-lightbox-meta p {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ===========================
    CONTACT SECTION
    =========================== */
 .contact-content {
@@ -1936,6 +2353,9 @@ body.light-mode .navbar.scrolled {
     .hero-content { gap: 2rem; }
     .hero-img-wrapper { width: 300px; height: 300px; }
     .hero-img-container { width: 220px; height: 220px; }
+    .enigma-impact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .enigma-role-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .enigma-gallery-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -1972,6 +2392,11 @@ body.light-mode .navbar.scrolled {
     .leetcode-profile-btn { margin-top: 0.5rem; }
     .contact-content { grid-template-columns: 1fr; }
     .form-group { grid-template-columns: 1fr; }
+    .enigma-intro { flex-direction: column; align-items: flex-start; }
+    .enigma-gallery-header { flex-direction: column; align-items: flex-start; }
+    .enigma-impact-grid { grid-template-columns: 1fr; }
+    .enigma-role-grid { grid-template-columns: 1fr; }
+    .enigma-event-image-wrap { height: 220px; }
 
     .footer-content { grid-template-columns: 1fr; }
 
@@ -1986,7 +2411,10 @@ body.light-mode .navbar.scrolled {
     .leetcode-bottom-grid > *,
     .about-content > *,
     .contact-content > *,
-    .timeline-container > * { min-width: 0; }
+    .timeline-container > *,
+    .enigma-impact-grid > *,
+    .enigma-role-grid > *,
+    .enigma-gallery-grid > * { min-width: 0; }
 }
 
 @media (max-width: 480px) {
@@ -2004,6 +2432,9 @@ body.light-mode .navbar.scrolled {
     .hero-title-wrapper { font-size: 1.05rem; }
     .hero-description { font-size: 0.9rem; }
     .leetcode-intro h3 { font-size: 1.2rem; }
+    .enigma-intro h3, .enigma-gallery-header h3, .enigma-section-heading h3 { font-size: 1.4rem; }
+    .enigma-lightbox-content { padding: 0.6rem; }
+    .enigma-lightbox-image-wrap { min-height: 260px; }
 }
 
 .loader {
@@ -2016,4 +2447,113 @@ body.light-mode .navbar.scrolled {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
+}
+
+/* Simple Enigma activities layout */
+.enigma-intro {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.enigma-logo {
+    width: 110px;
+    height: 110px;
+    flex: 0 0 110px;
+    object-fit: contain;
+    border-radius: 18px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 0.55rem;
+}
+
+.enigma-intro-copy {
+    min-width: 0;
+}
+
+.enigma-intro h3 {
+    margin: 0.7rem 0 0.5rem;
+    font-size: 1.7rem;
+}
+
+.enigma-intro p,
+.enigma-role-simple p {
+    max-width: 780px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.enigma-role-simple {
+    padding: 1.5rem 0 2rem;
+}
+
+.enigma-role-simple h3 {
+    margin: 0.35rem 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.enigma-gallery-simple {
+    margin-top: 1rem;
+}
+
+.enigma-gallery-simple .enigma-section-heading {
+    margin-bottom: 1rem;
+}
+
+.enigma-gallery-simple .enigma-section-heading h3 {
+    margin-top: 0.35rem;
+    font-size: 1.5rem;
+}
+
+.enigma-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.enigma-photo-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.enigma-photo-grid img:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 900px) {
+    .enigma-photo-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .enigma-intro {
+        align-items: flex-start;
+    }
+
+    .enigma-logo {
+        width: 78px;
+        height: 78px;
+        flex-basis: 78px;
+        border-radius: 14px;
+    }
+
+    .enigma-photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .enigma-photo-grid img {
+        height: 150px;
+    }
 }

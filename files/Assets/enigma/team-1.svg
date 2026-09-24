@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g3)"/>
+  <circle cx="240" cy="180" r="120" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="980" cy="220" r="150" fill="rgba(255,255,255,0.06)"/>
+  <g>
+    <circle cx="400" cy="360" r="80" fill="rgba(255,255,255,0.18)"/>
+    <circle cx="610" cy="330" r="90" fill="rgba(255,255,255,0.22)"/>
+    <circle cx="830" cy="360" r="80" fill="rgba(255,255,255,0.18)"/>
+    <rect x="285" y="470" width="235" height="115" rx="18" fill="rgba(255,255,255,0.09)"/>
+    <rect x="505" y="450" width="220" height="135" rx="18" fill="rgba(255,255,255,0.12)"/>
+    <rect x="745" y="470" width="210" height="115" rx="18" fill="rgba(255,255,255,0.09)"/>
+  </g>
+  <text x="600" y="700" text-anchor="middle" font-size="56" font-family="Arial, sans-serif" fill="#f8fafc" font-weight="700">TEAM COLLABORATION</text>
+</svg>
