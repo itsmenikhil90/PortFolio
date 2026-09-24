@@ -67,6 +67,7 @@ html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--primary) var(--bg-secondary);
+    overflow-x: clip;
 }
 
 ::-webkit-scrollbar { width: 8px; }
@@ -78,6 +79,7 @@ body {
     background: var(--bg-primary);
     color: var(--text-primary);
     overflow-x: hidden;
+    width: 100%;
     cursor: default;
 }
 
@@ -87,6 +89,7 @@ img { max-width: 100%; display: block; }
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -575,6 +578,7 @@ body.light-mode .navbar.scrolled {
 .hero-content {
     max-width: 1200px;
     width: 100%;
+    min-width: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -947,6 +951,7 @@ body.light-mode .navbar.scrolled {
 
 .info-value {
     color: var(--text-secondary);
+    overflow-wrap: anywhere;
 }
 
 .info-value.available {
@@ -1499,6 +1504,7 @@ body.light-mode .navbar.scrolled {
 .activity-chart span:nth-child(3n) { opacity: 0.45; }.activity-labels { display: flex; justify-content: space-between; color: var(--text-muted); font-size: 0.65rem; padding-top: 0.6rem; }
 .focus-card h3 { margin: 0.4rem 0 1.3rem; }
 .focus-item { display: grid; grid-template-columns: 28px 1fr auto; gap: 0.5rem; align-items: center; padding: 0.85rem 0; border-top: 1px solid var(--border); }
+.focus-item > div { min-width: 0; }
 .focus-item > i { color: var(--accent); }.focus-item strong, .focus-item span { display: block; }.focus-item strong { font-size: 0.78rem; }.focus-item span { color: var(--text-muted); font-size: 0.68rem; margin-top: 0.2rem; }.focus-item b { color: var(--accent); font-size: 0.75rem; }
 
 /* ===========================
@@ -1972,6 +1978,14 @@ body.light-mode .navbar.scrolled {
     .section-title { font-size: 2rem; }
 
     .testimonial-card { min-width: 100%; }
+    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .mobile-menu { width: min(300px, 100vw); }
+    .leetcode-dashboard > *,
+    .leetcode-bottom-grid > *,
+    .about-content > *,
+    .contact-content > *,
+    .timeline-container > * { min-width: 0; }
 }
 
 @media (max-width: 480px) {
@@ -1985,6 +1999,10 @@ body.light-mode .navbar.scrolled {
     .donut-chart { width: 125px; height: 125px; }
     .donut-chart > div { width: 93px; height: 93px; }
     .leetcode-metrics { gap: 0.4rem; }
+    .navbar { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero-title-wrapper { font-size: 1.05rem; }
+    .hero-description { font-size: 0.9rem; }
+    .leetcode-intro h3 { font-size: 1.2rem; }
 }
 
 .loader {
