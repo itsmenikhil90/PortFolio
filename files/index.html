@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikhil Patel | Creative Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="Assets/fevicon.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Particle Background -->
+  <canvas id="particles-canvas"></canvas>
+
+
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="#home"><span class="accent"></span></a>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+      <li><a href="#leetcode" class="nav-link" data-section="leetcode">LeetCode</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#home" class="mobile-link">Home</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#leetcode" class="mobile-link">LeetCode</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting reveal-text"> Hello, I'm</p>
+        <h1 class="hero-name reveal-text">
+          Nikhil <span class="accent">Patel</span>
+        </h1>
+        <div class="hero-title-wrapper">
+          <span class="hero-title-prefix">I'm a&nbsp;</span>
+          <span class="typewriter" id="typewriter"></span>
+          <span class="typewriter-cursor">|</span>
+        </div>
+        <p class="hero-description reveal-text">
+        I transform ideas into sleek, scalable digital experiences, blending full-stack development, AI, and thoughtful design to solve real-world problems.
+        </p>
+        <div class="hero-buttons reveal-text">
+          <a href="#projects" class="btn btn-primary">
+            <span>View My Work</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <span>Let's Talk</span>
+            <i class="fas fa-comment-dots"></i>
+          </a>
+        </div>
+        <div class="hero-stats reveal-text">
+          <div class="stat">
+            <h3 class="stat-number" data-target="3">0</h3>
+            <span class="stat-plus">+</span>
+            <p>Projects Done</p>
+          </div>
+          <div class="stat">
+            <h3 class="stat-number" data-target="0">0</h3>
+            <span class="stat-plus">+</span>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat">
+            <h3 class="stat-number" data-target="100">0</h3>
+            <span class="stat-plus">+</span>
+            <p>LeetCode</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="hero-image reveal-text">
+        <div class="hero-img-wrapper">
+          <div class="hero-img-bg"></div>
+          <div class="hero-img-container">
+            <!-- profile image -->
+            <div class="hero-avatar">
+              <img src="Assets/1677.jpg" alt="Nikhil Patel" >
+            </div>
+            <!-- profile image end -->
+          </div>
+          <div class="floating-badge badge-1">
+            <i class="fab fa-react"></i>
+            <span>React</span>
+          </div>
+          <div class="floating-badge badge-2">
+            <i class="fab fa-node-js"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="floating-badge badge-3">
+            <i class="fab  fa-database"></i>
+            <span>MongoDB</span>
+          </div>
+          <div class="floating-badge badge-4">
+            <i class="fas fa-server"></i>
+            <span>Express.js</span>
+          </div>
+          <div class="orbit-ring"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-socials">
+      <a href="https://github.com/itsmenikhil90" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/nikhil-patel13/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/nikhil.deepak.patel?stkn=MW5lMjJxMnpwOW15Yg%3D%3D" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+      <div class="social-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle reveal-up">Get To Know Me</p>
+        <h2 class="section-title reveal-up">About <span class="accent">Me</span></h2>
+      </div>
+      <div class="about-content">
+        <div class="about-image reveal-left">
+          <div class="about-img-wrapper">
+            <div class="about-avatar">
+              <img src="Assets/MYimage.png" alt="">
+            </div>
+            <div class="experience-badge">
+              <h3>0+</h3>
+              <p>Years<br>Experience <br>(Fresher)</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal-right">
+          <h3>A passionate developer based in <span class="accent">India , Lucknow</span></h3>
+          <p>
+          I'm a Computer Science student and aspiring Full Stack Developer with a strong interest in AI and modern web technologies. I enjoy building real-world projects, solving challenging problems, and continuously improving my development skills.
+          </p>
+          <p>
+           My journey into development started with curiosity about how websites and applications work. Since then, I've been learning by building projects, exploring new technologies, and solving real-world problems. I'm always looking for opportunities to improve my skills and create better digital experiences.
+          </p>
+          <div class="about-info">
+            <div class="info-item">
+              <span class="info-label">Name :</span>
+              <span class="info-value">Nikhil Patel</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Email :</span>
+              <span class="info-value">itsmenikhil90@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Location:</span>
+              <span class="info-value">Lucknow  , India</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Availability:</span>
+              <span class="info-value available">Available for work</span>
+            </div>
+          </div>
+          <a href="Assets/resumee.pdf" class="btn btn-primary">
+            <span>Download CV</span>
+            <i class="fas fa-download"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle reveal-up">What I Know</p>
+        <h2 class="section-title reveal-up">My <span class="accent">Skills</span></h2>
+      </div>
+      <div class="skills-content">
+        <div class="skills-tabs reveal-up">
+          <button class="tab-btn active" data-tab="frontend">Frontend</button>
+          <button class="tab-btn" data-tab="backend">Backend</button>
+          <button class="tab-btn" data-tab="ai">AI / ML</button>
+          <button class="tab-btn" data-tab="tools">Tools</button>
+        </div>
+        <div class="skills-grid" id="skills-grid">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+      <div class="services-grid reveal-up">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>Building responsive and performant web applications with modern frameworks.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Backend & APIs</h3>
+          <p>Developing scalable backend systems and RESTful API architectures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle reveal-up">My Recent Work</p>
+        <h2 class="section-title reveal-up">Featured <span class="accent">Projects</span></h2>
+      </div>
+      <div class="project-filters reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web App</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE / TIMELINE SECTION ===== -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle reveal-up">My Journey</p>
+        <h2 class="section-title reveal-up">Experience & <span class="accent">Education</span></h2>
+      </div>
+      <div class="timeline-container">
+        <div class="timeline-col">
+          <h3 class="timeline-heading reveal-up">
+            <i class="fas fa-briefcase"></i> Certifications
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item reveal-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2025</span>
+                <h4>Microsoft</h4>
+                <p class="timeline-company"></p>
+                <p>Explore Generative AI — Microsoft Learn </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2025</span>
+                <h4>IdeaThon</h4>
+                <p class="timeline-company">AIMT Platforms</p>
+                <p>Certificate of Participation — Ideathon, Yogyata 2.0 — IEEE Student Branch, AIMT .</p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2026</span>
+                <h4> EduPyramids – SINE 
+                <p class="timeline-company">IIT Bombay</p>
+                <p> C Programming Certification</p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2026</span>
+                <h4> EduPyramids – SINE 
+                <p class="timeline-company">IIT Bombay</p>
+                <p> C Programming Certification</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-col">
+          <h3 class="timeline-heading reveal-up">
+            <i class="fas fa-graduation-cap"></i> Education
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item reveal-right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2021</span>
+                <h4>Class 10th Completed</h4>
+                <p class="timeline-company">CBSE</p>
+                <p>Marks-63%.</p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2021 - 2023</span>
+                <h4>Class 12th Completed(SCN)</h4>
+                <p class="timeline-company">BSEB</p>
+                <p>Marks-72%</p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal-right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2026(Present)</span>
+                <h4>3rd Year </h4>
+                <p class="timeline-company">Semester 5th</p>
+                <p>Avg. SGPA-8.8</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEETCODE SECTION ===== -->
+  <section class="leetcode section" id="leetcode">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle reveal-up">Problem Solving Journey</p>
+        <h2 class="section-title reveal-up">My <span class="accent">LeetCode</span> Journey</h2>
+      </div>
+      <div class="leetcode-intro reveal-up">
+        <div>
+          <span class="leetcode-status"><span class="status-dot"></span> Consistently learning</span>
+          <h3>Building stronger fundamentals, one problem at a time.</h3>
+          <p>
+            I use LeetCode to sharpen my data structures and algorithms knowledge. Every solution helps me
+            write cleaner code, recognise patterns faster, and prepare for real-world engineering challenges.
+          </p>
+        </div>
+        <a class="btn btn-primary leetcode-profile-btn" href="https://leetcode.com/u/Nikhil7635/" target="_blank" rel="noopener noreferrer">
+          <span>View LeetCode Profile</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <div class="leetcode-dashboard">
+        <div class="leetcode-profile-card reveal-left">
+          <div class="leetcode-profile-heading">
+            <div class="leetcode-avatar">
+              <img id="leetcode-avatar-image" src="https://assets.leetcode.com/users/Nikhil7635/avatar_1771912864.png" alt="Nikhil Patel on LeetCode">
+              <i class="fas fa-code" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="eyebrow">Profile</span>
+              <h3>Nikhil Patel</h3>
+              <p>Full Stack Developer · India</p>
+            </div>
+          </div>
+          <div class="leetcode-profile-link">
+            <span><i class="fas fa-at"></i> <span id="leetcode-username">Nikhil7635</span></span>
+            <i class="fas fa-arrow-up-right-from-square"></i>
+          </div>
+          <div class="leetcode-streak">
+            <div class="streak-icon"><i class="fas fa-fire"></i></div>
+            <div><strong id="leetcode-streak">35 days</strong><span>Current solving streak</span></div>
+          </div>
+          <div class="leetcode-topics">
+            <span>Arrays</span><span>Hash Tables</span><span>Strings</span><span>Dynamic Programming</span>
+          </div>
+        </div>
+
+        <div class="leetcode-stats-card reveal-right">
+          <div class="leetcode-card-heading">
+            <div><span class="eyebrow">Progress overview</span><h3>Problems solved</h3></div>
+            <span class="solved-total" id="leetcode-solved-total">99</span>
+          </div>
+          <div class="difficulty-chart">
+            <div class="donut-chart" aria-label="150 plus problems solved">
+              <div><strong id="leetcode-solved">99</strong><span>Solved</span></div>
+            </div>
+            <div class="difficulty-list">
+              <div class="difficulty-row"><span><i class="difficulty-dot easy"></i>Easy</span><strong id="leetcode-easy">64</strong><div class="difficulty-bar"><i id="leetcode-easy-bar" style="width: 76%"></i></div></div>
+              <div class="difficulty-row"><span><i class="difficulty-dot medium"></i>Medium</span><strong id="leetcode-medium">29</strong><div class="difficulty-bar"><i id="leetcode-medium-bar" style="width: 62%"></i></div></div>
+              <div class="difficulty-row"><span><i class="difficulty-dot hard"></i>Hard</span><strong id="leetcode-hard">6</strong><div class="difficulty-bar"><i id="leetcode-hard-bar" style="width: 28%"></i></div></div>
+            </div>
+          </div>
+          <div class="leetcode-metrics">
+            <div><strong id="leetcode-acceptance">86.8%</strong><span>Acceptance rate</span></div>
+            <div><strong id="leetcode-rating">—</strong><span>Contest rating</span></div>
+            <div><strong id="leetcode-ranking">#1,706,508</strong><span>Global ranking</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leetcode-bottom-grid">
+        <div class="activity-card reveal-up">
+          <div class="leetcode-card-heading"><div><span class="eyebrow">Consistency</span><h3>Yearly activity</h3></div><span class="activity-year">2026</span></div>
+          <div class="activity-chart" id="leetcode-activity-chart" aria-label="Monthly LeetCode activity chart">
+            <span style="height: 32%"></span><span style="height: 48%"></span><span style="height: 40%"></span><span style="height: 64%"></span><span style="height: 56%"></span><span style="height: 82%"></span><span style="height: 70%"></span><span style="height: 90%"></span><span style="height: 62%"></span><span style="height: 76%"></span><span style="height: 52%"></span><span style="height: 86%"></span>
+          </div>
+          <div class="activity-labels"><span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Now</span></div>
+        </div>
+        <div class="focus-card reveal-up">
+          <span class="eyebrow">Current focus</span>
+          <h3>What I’m practising</h3>
+          <div class="focus-item"><i class="fas fa-sitemap"></i><div><strong>Data structures</strong><span>Stacks, queues & linked lists</span></div><b>80%</b></div>
+          <div class="focus-item"><i class="fas fa-diagram-project"></i><div><strong>Problem patterns</strong><span>Two pointers & sliding window</span></div><b>65%</b></div>
+          <div class="focus-item"><i class="fas fa-route"></i><div><strong>Interview readiness</strong><span>Timed contests & mock rounds</span></div><b>55%</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle reveal-up">Get In Touch</p>
+        <h2 class="section-title reveal-up">Contact <span class="accent">Me</span></h2>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info reveal-left">
+          <h3>Let's work together!</h3>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>itsmenikhil90@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p>+91 9128206168</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4>Location</h4>
+                <p>India , Lucknow</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/itsmenikhil90" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nikhil-patel13/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/nikhil.deepak.patel?stkn=MW5lMjJxMnpwOW15Yg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <form class="contact-form reveal-right" id="contact-form" action="https://formsubmit.co/ajax/itsmenikhil90@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New portfolio enquiry from your website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-group">
+            <div class="input-wrapper">
+              <input type="text" id="name" name="name" required>
+              <label for="name">Your Name</label>
+              <span class="input-line"></span>
+            </div>
+            <div class="input-wrapper">
+              <input type="email" id="email" name="email" required>
+              <label for="email">Your Email</label>
+              <span class="input-line"></span>
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" id="subject" name="subject" required>
+            <label for="subject">Subject</label>
+            <span class="input-line"></span>
+          </div>
+          <div class="input-wrapper">
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="message">Your Message</label>
+            <span class="input-line"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <div class="form-status" id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>NK<span class="accent">.</span></h2>
+          <p>Crafting digital experiences with passion and precision.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#leetcode">LeetCode</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to get my latest updates.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email">
+            <button><i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nikhil Patel. All rights reserved.</p>
+        <button class="back-to-top" id="back-to-top">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
