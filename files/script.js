@@ -349,22 +349,7 @@ const projectsData = [
         gradient: 'linear-gradient(135deg, #ff6b6b, #ffd93d)',
         icon: 'fas fa-chart-line'
     },
-    {
-        title: 'Fitness Tracker App',
-        description: 'Cross-platform mobile app for tracking workouts, nutrition, and health metrics with AI recommendations.',
-        tags: ['React Native', 'Python', 'TensorFlow'],
-        category: 'mobile',
-        gradient: 'linear-gradient(135deg, #a855f7, #6c63ff)',
-        icon: 'fas fa-heartbeat'
-    },
-    {
-        title: 'Brand Identity System',
-        description: 'Complete brand identity design including logo, typography, color system, and brand guidelines.',
-        tags: ['Figma', 'Illustrator', 'Brand Strategy'],
-        category: 'design',
-        gradient: 'linear-gradient(135deg, #00d4aa, #00b4d8)',
-        icon: 'fas fa-palette'
-    },
+    
     {
         title: 'Task Management App',
         description: 'Collaborative project management tool with real-time updates, Kanban boards, and team chat.',
@@ -373,14 +358,7 @@ const projectsData = [
         gradient: 'linear-gradient(135deg, #f093fb, #f5576c)',
         icon: 'fas fa-tasks'
     },
-    {
-        title: 'Food Delivery App',
-        description: 'Mobile app with real-time order tracking, restaurant discovery, and integrated payment system.',
-        tags: ['Flutter', 'Firebase', 'Google Maps'],
-        category: 'mobile',
-        gradient: 'linear-gradient(135deg, #4facfe, #00f2fe)',
-        icon: 'fas fa-utensils'
-    }
+   
 ];
 
 const projectsGrid = document.getElementById('projects-grid');
