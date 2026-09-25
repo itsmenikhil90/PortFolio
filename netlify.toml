@@ -1,3 +1,6 @@
 [build]
   publish = "files"
   functions = "netlify/functions"
+
+[functions]
+  included_files = ["files/data/portfolio.json"]

@@ -1,5 +1,18 @@
 # 🚀 Personal Portfolio Website
 
+## NIK AI chatbot
+
+The portfolio includes a responsive NIK AI assistant in the bottom-right corner. It uses the centralized public profile in [`files/data/portfolio.json`](files/data/portfolio.json), live GitHub and LeetCode lookups, and an optional server-side OpenAI integration through `netlify/functions/chat.js`. Without an LLM key, the endpoint remains usable with grounded profile responses.
+
+For Netlify deployment:
+
+1. Copy `.env.example` values into Netlify Site configuration (do not commit `.env`).
+2. Set `OPENAI_API_KEY` to enable LLM responses. `GITHUB_TOKEN` is optional and remains server-side.
+3. Keep the published directory as `files` and functions directory as `netlify/functions` as configured in `netlify.toml`.
+4. Deploy, then test `/.netlify/functions/chat` from the live site. The client never receives API keys.
+
+The endpoint limits requests by IP (100 per hour by default), rejects empty or oversized messages, and returns a friendly error rather than a stack trace. Set `RATE_LIMIT_WINDOW` and `RATE_LIMIT_MAX` to adjust the limit.
+
 A modern, responsive, and interactive **personal portfolio website** built using **HTML, CSS, and JavaScript**. This portfolio is designed to showcase my technical skills, projects, achievements, education, and development journey in a clean and professional way.
 
 The website focuses on a **modern UI, smooth animations, responsive design, and a user-friendly experience** across desktop, tablet, and mobile devices.

@@ -1,0 +1,68 @@
+{
+  "personal": {
+    "name": "Nikhil Patel",
+    "role": "Computer Science and Artificial Intelligence student and aspiring Full Stack Developer",
+    "location": "Lucknow, India",
+    "bio": "Nikhil builds real-world digital experiences with full-stack development, AI, and modern web technologies."
+  },
+  "skills": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "React",
+    "TypeScript",
+    "Tailwind",
+    "Next.js",
+    "Node.js",
+    "Python",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "GraphQL",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Git",
+    "GitHub",
+    "LLMs",
+    "RAG",
+    "Prompt Engineering",
+    "AI/ML Fundamentals",
+    "Model Training"
+  ],
+  "projects": [
+    {
+      "name": "E-Commerce Platform",
+      "description": "A full-stack e-commerce solution with payment integration, an admin dashboard, and real-time inventory management.",
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe"]
+    },
+    {
+      "name": "Social Media Dashboard",
+      "description": "An analytics dashboard with real-time data visualization, user insights, and automated reporting features.",
+      "technologies": ["Vue.js", "D3.js", "Firebase"]
+    },
+    {
+      "name": "Task Management App",
+      "description": "A collaborative project management tool with real-time updates, Kanban boards, and team chat.",
+      "technologies": ["Next.js", "Socket.io", "PostgreSQL"]
+    }
+  ],
+  "education": {
+    "summary": "Nikhil is a Computer Science and Artificial Intelligence student.",
+    "institution": "Not published on the portfolio",
+    "cgpa": "Not published on the portfolio"
+  },
+  "experience": "Nikhil is a fresher and the portfolio does not list formal work experience.",
+  "social": {
+    "github": "https://github.com/itsmenikhil90",
+    "linkedin": "https://www.linkedin.com/in/nikhil-patel13/",
+    "leetcode": "https://leetcode.com/u/Nikhil7635/"
+  },
+  "contact": {
+    "email": "itsmenikhil90@gmail.com",
+    "phone": "+91 9128206168",
+    "phonePublic": true,
+    "resume": "Assets/resumee.pdf",
+    "availability": "Available for work"
+  }
+}

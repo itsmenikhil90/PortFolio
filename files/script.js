@@ -407,6 +407,104 @@ filterBtns.forEach(btn => {
 renderProjects();
 
 /* ===========================
+   NIK AI CHATBOT
+   =========================== */
+const chatbotLauncher = document.getElementById('chatbot-launcher');
+const chatbotPanel = document.getElementById('chatbot-panel');
+const chatbotClose = document.getElementById('chatbot-close');
+const chatbotClear = document.getElementById('chatbot-clear');
+const chatbotMessages = document.getElementById('chatbot-messages');
+const chatbotForm = document.getElementById('chatbot-form');
+const chatbotInput = document.getElementById('chatbot-input');
+const chatbotQuickActions = document.getElementById('chatbot-quick-actions');
+let chatbotHistory = [];
+
+function setChatbotOpen(open) {
+    chatbotPanel.classList.toggle('open', open);
+    chatbotPanel.setAttribute('aria-hidden', String(!open));
+    chatbotLauncher.setAttribute('aria-expanded', String(open));
+    if (open) chatbotInput.focus();
+}
+
+function appendChatMessage(text, type) {
+    const message = document.createElement('div');
+    message.className = `chat-message ${type}-message`;
+    message.textContent = text;
+    chatbotMessages.appendChild(message);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    return message;
+}
+
+function appendLinks(container, links) {
+    if (!Array.isArray(links)) return;
+    links.forEach(link => {
+        if (!link.url || container.querySelector(`a[href="${link.url}"]`)) return;
+        const anchor = document.createElement('a');
+        anchor.href = link.url;
+        anchor.textContent = link.label;
+        anchor.target = '_blank';
+        anchor.rel = 'noopener noreferrer';
+        anchor.style.display = 'inline-block';
+        anchor.style.margin = '.45rem .5rem 0 0';
+        if (link.download) anchor.setAttribute('download', '');
+        container.appendChild(anchor);
+    });
+}
+
+async function sendChatbotMessage(rawMessage) {
+    const message = rawMessage.trim();
+    if (!message) return;
+    appendChatMessage(message, 'user');
+    chatbotHistory.push({ role: 'user', content: message });
+    chatbotInput.value = '';
+    chatbotInput.disabled = true;
+    chatbotForm.querySelector('button').disabled = true;
+    const typing = appendChatMessage('', 'bot');
+    typing.innerHTML = '<span class="chatbot-typing"><span></span><span></span><span></span></span>';
+    try {
+        const response = await fetch('/.netlify/functions/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message, history: chatbotHistory.slice(-8) })
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error || 'Chat service unavailable.');
+        typing.textContent = '';
+        for (const word of payload.answer.split(/(\s+)/)) {
+            typing.textContent += word;
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            await new Promise(resolve => setTimeout(resolve, 12));
+        }
+        appendLinks(typing, payload.links);
+        chatbotHistory.push({ role: 'assistant', content: payload.answer });
+    } catch (error) {
+        typing.textContent = `I’m having trouble connecting right now. ${error.message} You can still explore the portfolio sections below.`;
+        const retry = document.createElement('button');
+        retry.textContent = ' Retry';
+        retry.type = 'button';
+        retry.onclick = () => sendChatbotMessage(message);
+        typing.appendChild(retry);
+    } finally {
+        chatbotInput.disabled = false;
+        chatbotForm.querySelector('button').disabled = false;
+        chatbotInput.focus();
+    }
+}
+
+chatbotLauncher.addEventListener('click', () => setChatbotOpen(!chatbotPanel.classList.contains('open')));
+chatbotClose.addEventListener('click', () => setChatbotOpen(false));
+chatbotClear.addEventListener('click', () => {
+    chatbotHistory = [];
+    chatbotMessages.innerHTML = '';
+    appendChatMessage("Hi! I'm NIK AI. Ask me about Nikhil's work, projects, skills, or profile.", 'bot');
+});
+chatbotForm.addEventListener('submit', event => { event.preventDefault(); sendChatbotMessage(chatbotInput.value); });
+chatbotQuickActions.addEventListener('click', event => {
+    const button = event.target.closest('button');
+    if (button) sendChatbotMessage(button.dataset.question);
+});
+
+/* ===========================
    LIVE LEETCODE PROFILE
    =========================== */
 const leetcodeUsername = 'Nikhil7635';
