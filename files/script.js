@@ -407,7 +407,7 @@ filterBtns.forEach(btn => {
 renderProjects();
 
 /* ===========================
-   NIK AI CHATBOT
+   NIKBOT CHATBOT
    =========================== */
 const chatbotLauncher = document.getElementById('chatbot-launcher');
 const chatbotPanel = document.getElementById('chatbot-panel');
@@ -496,7 +496,7 @@ chatbotClose.addEventListener('click', () => setChatbotOpen(false));
 chatbotClear.addEventListener('click', () => {
     chatbotHistory = [];
     chatbotMessages.innerHTML = '';
-    appendChatMessage("Hi! I'm NIK AI. Ask me about Nikhil's work, projects, skills, or profile.", 'bot');
+    appendChatMessage("Hi! I'm NIKBOT. Ask me about Nikhil's work, projects, skills, or profile.", 'bot');
 });
 chatbotForm.addEventListener('submit', event => { event.preventDefault(); sendChatbotMessage(chatbotInput.value); });
 chatbotQuickActions.addEventListener('click', event => {
